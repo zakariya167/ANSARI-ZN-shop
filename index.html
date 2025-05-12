@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Al-Ansari Shop</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      background: #f5f5f5;
+      color: #333;
+    }
+    header {
+      background: #222;
+      color: white;
+      padding: 1rem;
+      text-align: center;
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      background: #444;
+      padding: 0.5rem;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .hero {
+      background: url('https://images.unsplash.com/photo-1506617420156-8e4536971650') center/cover no-repeat;
+      color: white;
+      text-align: center;
+      padding: 4rem 1rem;
+    }
+    section {
+      padding: 2rem;
+    }
+    .products {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.5rem;
+    }
+    .product {
+      background: white;
+      border-radius: 10px;
+      padding: 1rem;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+    .product img {
+      width: 100%;
+      border-radius: 8px;
+      height: 200px;
+      object-fit: cover;
+    }
+    footer {
+      background: #222;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      margin-top: 2rem;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>متجر الأنصاري - Al-Ansari Shop</h1>
+    <p>عطور أصلية، ملابس راقية، عروض حصرية!</p>
+  </header>
+
+  <nav>
+    <a href="#perfumes">العطور</a>
+    <a href="#clothes">الملابس</a>
+    <a href="#business">بيزنس</a>
+    <a href="#contact">تواصل معنا</a>
+  </nav>
+
+  <div class="hero">
+    <h2>جمال العطر، أناقة اللباس</h2>
+    <p>تسوق الآن وتمتع بأفضل الأسعار</p>
+  </div>
+
+  <section id="perfumes">
+    <h2>عطور فاخرة</h2>
+    <div class="products">
+      <div class="product">
+        <img src="https://images.unsplash.com/photo-1585386959984-a4155224a1ab" alt="عطر">
+        <h3>عطر فاخر للرجال</h3>
+        <p>سعر: $25</p>
+      </div>
+      <div class="product">
+        <img src="https://images.unsplash.com/photo-1614288648013-c56ff1779dd2" alt="عطر نسائي">
+        <h3>عطر زهري للنساء</h3>
+        <p>سعر: $30</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="clothes">
+    <h2>ملابس أنيقة</h2>
+    <div class="products">
+      <div class="product">
+        <img src="https://images.unsplash.com/photo-1542068829-1115f7259450" alt="تي شيرت">
+        <h3>تي شيرت قطني</h3>
+        <p>سعر: $15</p>
+      </div>
+      <div class="product">
+        <img src="https://images.unsplash.com/photo-1562158070-57b4b51fadb0" alt="جاكيت">
+        <h3>جاكيت شتوي</h3>
+        <p>سعر: $45</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="business">
+    <h2>خدمات بيزنس</h2>
+    <p>هل ترغب بعرض منتجاتك في متجرنا؟ تواصل معنا الآن وسنساعدك على الوصول لعملاء جدد!</p>
+  </section>
+
+  <section id="contact">
+    <h2>تواصل معنا</h2>
+    <p>راسلنا عبر الإيميل: <a href="mailto:ansarizakariya619@gmail.com">ansarizakariya619@gmail.com</a></p>
+  </section>
+
+  <footer>
+    <p>© 2025 Al-Ansari Shop. جميع الحقوق محفوظة.</p>
+  </footer>
+
+</body>
+</html>
