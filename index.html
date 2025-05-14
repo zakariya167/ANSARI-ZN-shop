@@ -1,160 +1,85 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="ar">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Al-Ansari Shop</title>
-  <style>
-    body {
-      font-family: 'Arial', sans-serif;
-      margin: 0;
-      background: #f5f5f5;
-      color: #333;
-    }
-    header {
-      background: #222;
-      color: white;
-      padding: 1rem;
-      text-align: center;
-    }
-    header img {
-      width: 120px;
-      display: block;
-      margin: 0 auto 10px;
-    }
-    nav {
-      display: flex;
-      justify-content: center;
-      gap: 1rem;
-      background: #444;
-      padding: 0.5rem;
-    }
-    nav a {
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-    }
-    .hero {
-      background: url('https://images.unsplash.com/photo-1506617420156-8e4536971650') center/cover no-repeat;
-      color: white;
-      text-align: center;
-      padding: 4rem 1rem;
-    }
-    section {
-      padding: 2rem;
-    }
-    .products {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 1.5rem;
-    }
-    .product {
-      background: white;
-      border-radius: 10px;
-      padding: 1rem;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-      text-align: center;
-    }
-    .product img {
-      width: 100%;
-      border-radius: 8px;
-      height: 200px;
-      object-fit: cover;
-    }
-    footer {
-      background: #222;
-      color: white;
-      text-align: center;
-      padding: 1rem;
-      margin-top: 2rem;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="متجر عطور الانصاري - بيع العطور، الملابس، والمنتجات المتنوعة">
+    <title>عطور الانصاري | متجر الكتروني</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="favicon.ico">
 </head>
 <body>
 
-  <header>
-    <img src="a247e454-697b-449b-baa1-496b569f93d7.png" alt="شعار المتجر" style="height: 100px; margin-bottom: 10px;">
-    <h1>متجر الأنصاري - Al-Ansari Shop</h1>
-    <p>عطور أصلية، ملابس راقية، عروض حصرية!</p>
-  </header>
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <h1>عطور الانصاري</h1>
+            <nav>
+                <ul>
+                    <li><a href="#home">الرئيسية</a></li>
+                    <li><a href="#products">المنتجات</a></li>
+                    <li><a href="#business">بيزنس</a></li>
+                    <li><a href="#contact">التواصل</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
-  <nav>
-    <a href="#perfumes">العطور</a>
-    <a href="#clothes">الملابس</a>
-    <a href="#business">بيزنس</a>
-    <a href="#contact">تواصل معنا</a>
-  </nav>
+    <!-- Home Section -->
+    <section id="home" class="home">
+        <div class="container">
+            <h2>مرحبا بكم في متجر عطور الانصاري</h2>
+            <p>أفضل العطور، الملابس، ومنتجات متنوعة بجودة عالية وأسعار مميزة</p>
+        </div>
+    </section>
 
-  <div class="hero">
-    <h2>جمال العطر، أناقة اللباس</h2>
-    <p>تسوق الآن وتمتع بأفضل الأسعار</p>
-  </div>
+    <!-- Products Section -->
+    <section id="products" class="products">
+        <div class="container">
+            <h2>منتجاتنا</h2>
+            <div class="product-list">
+                <!-- Perfume Product -->
+                <div class="product">
+                    <img src="perfume1.jpg" alt="عطر انصاري" />
+                    <h3>عطر انصاري 1</h3>
+                    <p>وصف مختصر للعطر، رائحته المميزة...</p>
+                    <button>أضف إلى السلة</button>
+                </div>
+                <!-- Clothes Product -->
+                <div class="product">
+                    <img src="clothes1.jpg" alt="ملابس انصاري" />
+                    <h3>تي شيرت انصاري</h3>
+                    <p>وصف مختصر للملابس...</p>
+                    <button>أضف إلى السلة</button>
+                </div>
+                <!-- Additional Products can be added here -->
+            </div>
+        </div>
+    </section>
 
-  <section id="perfumes">
-    <h2>عطور فاخرة</h2>
-    <div class="products">
-      <div class="product">
-        <img src="https://images.unsplash.com/photo-1585386959984-a4155224a1ab" alt="عطر">
-        <h3>عطر فاخر للرجال</h3>
-        <p>سعر: $25</p>
-      </div>
-      <div class="product">
-        <img src="https://images.unsplash.com/photo-1614288648013-c56ff1779dd2" alt="عطر نسائي">
-        <h3>عطر زهري للنساء</h3>
-        <p>سعر: $30</p>
-      </div>
-      <div class="product">
-        <img src="https://images.unsplash.com/photo-1596901646134-6e9b441c2067" alt="عطر شرقي">
-        <h3>عطر شرقي فاخر</h3>
-        <p>سعر: $35</p>
-      </div>
-      <div class="product">
-        <img src="https://images.unsplash.com/photo-1600185365483-26d7f5a6aa07" alt="عطر فرنسي">
-        <h3>عطر فرنسي مركز</h3>
-        <p>سعر: $40</p>
-      </div>
-    </div>
-  </section>
+    <!-- Business Section -->
+    <section id="business" class="business">
+        <div class="container">
+            <h2>بيزنس - فرص الاستثمار</h2>
+            <p>إذا كنت ترغب في بدء عملك الخاص في مجال العطور أو الموضة، نقدم لك فرصًا مميزة للاستثمار. اتصل بنا لمعرفة المزيد.</p>
+        </div>
+    </section>
 
-  <section id="clothes">
-    <h2>ملابس أنيقة</h2>
-    <div class="products">
-      <div class="product">
-        <img src="https://images.unsplash.com/photo-1542068829-1115f7259450" alt="تي شيرت">
-        <h3>تي شيرت قطني</h3>
-        <p>سعر: $15</p>
-      </div>
-      <div class="product">
-        <img src="https://images.unsplash.com/photo-1562158070-57b4b51fadb0" alt="جاكيت">
-        <h3>جاكيت شتوي</h3>
-        <p>سعر: $45</p>
-      </div>
-      <div class="product">
-        <img src="https://images.unsplash.com/photo-1618354691207-27c3f5144d30" alt="قميص رسمي">
-        <h3>قميص رسمي رجالي</h3>
-        <p>سعر: $30</p>
-      </div>
-      <div class="product">
-        <img src="https://images.unsplash.com/photo-1533674689015-645e2f98f8a3" alt="فستان نسائي">
-        <h3>فستان ناعم للنساء</h3>
-        <p>سعر: $55</p>
-      </div>
-    </div>
-  </section>
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>التواصل معنا</h2>
+            <p>إذا كان لديك أي استفسارات أو ترغب في التعاون معنا، لا تتردد في التواصل معنا عبر البريد الإلكتروني:</p>
+            <p><a href="mailto:ansarizakariya619@gmail.com">ansarizakariya619@gmail.com</a></p>
+        </div>
+    </section>
 
-  <section id="business">
-    <h2>خدمات بيزنس</h2>
-    <p>هل ترغب بعرض منتجاتك في متجرنا؟ تواصل معنا الآن وسنساعدك على الوصول لعملاء جدد!</p>
-  </section>
-
-  <section id="contact">
-    <h2>تواصل معنا</h2>
-    <p>راسلنا عبر الإيميل: <a href="mailto:ansarizakariya619@gmail.com">ansarizakariya619@gmail.com</a></p>
-  </section>
-
-  <footer>
-    <p>© 2025 Al-Ansari Shop. جميع الحقوق محفوظة.</p>
-  </footer>
+    <!-- Footer Section -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 عطور الانصاري - جميع الحقوق محفوظة.</p>
+        </div>
+    </footer>
 
 </body>
 </html>
