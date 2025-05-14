@@ -6,274 +6,268 @@
     <title>ZN_ANSARI-SHOP</title>
     <link href="https://fonts.googleapis.com/css2?family=Cairo&display=swap" rel="stylesheet">
     <style>
-        /* إعدادات عامة */
         body {
             font-family: 'Cairo', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f6f6;
+            background-color: #f4f4f9;
             color: #333;
             direction: rtl;
         }
+
         header {
-            background-color: #2980b9;
+            background-color: #333;
             color: white;
-            text-align: center;
             padding: 20px;
+            text-align: center;
         }
-        header h1 {
-            font-size: 3rem;
-            margin: 0;
-        }
+
         nav ul {
             display: flex;
             justify-content: center;
             list-style: none;
             padding: 0;
-            gap: 25px;
-            font-size: 1.2rem;
+            margin: 0;
+            gap: 30px;
+            font-size: 18px;
         }
+
         nav a {
             color: white;
             text-decoration: none;
             font-weight: bold;
         }
+
         nav a:hover {
             text-decoration: underline;
         }
 
-        /* أقسام المتجر */
+        .hero {
+            background: url('https://via.placeholder.com/1920x600?text=ZN_ANSARI-SHOP') no-repeat center center;
+            background-size: cover;
+            color: white;
+            padding: 100px 20px;
+            text-align: center;
+        }
+
         .section {
             padding: 40px 20px;
         }
+
         .section h2 {
             text-align: center;
-            margin-bottom: 20px;
-            font-size: 2.5rem;
-            color: #2980b9;
+            margin-bottom: 30px;
+            font-size: 28px;
+            color: #333;
         }
 
-        /* عرض المنتجات */
         .product-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 30px;
-            justify-items: center;
+            margin-top: 20px;
         }
+
         .product {
-            background: #fff;
+            background: white;
             padding: 20px;
             border-radius: 10px;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
             text-align: center;
-            transition: transform 0.3s ease;
-            max-width: 300px;
-        }
-        .product:hover {
-            transform: translateY(-10px);
-        }
-        .product img {
-            width: 100%;
-            height: auto;
-            border-radius: 8px;
-            margin-bottom: 15px;
-        }
-        .product h3 {
-            font-size: 1.8rem;
-            margin: 10px 0;
-        }
-        .product p {
-            font-size: 1.2rem;
-            color: #7f8c8d;
-        }
-        .product button {
-            background-color: #3498db;
-            color: white;
-            border: none;
-            padding: 12px 20px;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 1rem;
-        }
-        .product button:hover {
-            background-color: #2980b9;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
         }
 
-        /* الفوتر */
+        .product:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .product img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        .product button {
+            margin-top: 15px;
+            background-color: #444;
+            color: white;
+            border: none;
+            padding: 12px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .product button:hover {
+            background-color: #333;
+        }
+
         footer {
-            background-color: #2980b9;
+            background-color: #333;
             color: white;
             text-align: center;
             padding: 20px;
         }
-        footer p {
-            font-size: 1rem;
-        }
 
-        /* نماذج التواصل */
         form {
-            max-width: 600px;
+            max-width: 500px;
             margin: auto;
             display: flex;
             flex-direction: column;
-            gap: 20px;
-        }
-        input, textarea {
-            padding: 12px;
-            border: 1px solid #ccc;
-            border-radius: 8px;
-            font-size: 1rem;
-        }
-        input[type="submit"] {
-            background-color: #2980b9;
-            color: white;
-            border: none;
-            cursor: pointer;
-        }
-        input[type="submit"]:hover {
-            background-color: #3498db;
+            gap: 15px;
         }
 
-        /* تصميم قسم بيزنس */
+        input, textarea {
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        input[type="submit"] {
+            background-color: #444;
+            color: white;
+            border: none;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #333;
+        }
+
         .business-section {
-            background-color: #ecf0f1;
+            background-color: #f9f9f9;
             padding: 40px 20px;
-            text-align: center;
         }
+
         .business-section h2 {
-            color: #2980b9;
-            font-size: 2.5rem;
+            color: #444;
         }
+
         .business-section p {
-            font-size: 1.2rem;
-            color: #7f8c8d;
+            font-size: 18px;
+            text-align: center;
             margin-top: 20px;
+        }
+
+        .business-section .cta-button {
+            background-color: #444;
+            color: white;
+            padding: 15px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 20px;
+        }
+
+        .business-section .cta-button:hover {
+            background-color: #333;
         }
 
     </style>
 </head>
 <body>
 
-    <header>
-        <h1>ZN_ANSARI-SHOP</h1>
-        <nav>
-            <ul>
-                <li><a href="#perfumes">العطور</a></li>
-                <li><a href="#clothes">الملابس</a></li>
-                <li><a href="#others">منتجات متنوعة</a></li>
-                <li><a href="#business">بيزنس</a></li>
-                <li><a href="#contact">تواصل معنا</a></li>
-            </ul>
-        </nav>
-    </header>
+<header>
+    <h1>ZN_ANSARI-SHOP</h1>
+    <nav>
+        <ul>
+            <li><a href="#perfumes">العطور</a></li>
+            <li><a href="#clothes">الملابس</a></li>
+            <li><a href="#others">منتجات متنوعة</a></li>
+            <li><a href="#business">بيزنس وأفكار مساعدة</a></li>
+            <li><a href="#contact">تواصل معنا</a></li>
+        </ul>
+    </nav>
+</header>
 
-    <!-- قسم العطور -->
-    <section class="section" id="perfumes">
-        <h2>العطور</h2>
-        <div class="product-grid">
-            <div class="product">
-                <img src="https://via.placeholder.com/300x300?text=عطر+فاخر" alt="عطر فاخر">
-                <h3>عطر فاخر</h3>
-                <p>رائحة جذابة تدوم طويلًا.</p>
-                <button>أضف للسلة</button>
-            </div>
-            <div class="product">
-                <img src="https://via.placeholder.com/300x300?text=عطر+زهري" alt="عطر زهري">
-                <h3>عطر زهري مميز</h3>
-                <p>رائحة زهرية تدوم طويلًا.</p>
-                <button>أضف للسلة</button>
-            </div>
-            <div class="product">
-                <img src="https://via.placeholder.com/300x300?text=عطر+شرقي" alt="عطر شرقي">
-                <h3>عطر شرقي</h3>
-                <p>مزيج من العطور الشرقية المميزة.</p>
-                <button>أضف للسلة</button>
-            </div>
-            <div class="product">
-                <img src="https://via.placeholder.com/300x300?text=عطر+خشبي" alt="عطر خشبي">
-                <h3>عطر خشبي</h3>
-                <p>رائحة طبيعية وفاخرة.</p>
-                <button>أضف للسلة</button>
-            </div>
-            <div class="product">
-                <img src="https://via.placeholder.com/300x300?text=عطر+ساحر" alt="عطر ساحر">
-                <h3>عطر ساحر</h3>
-                <p>رائحة ساحرة تدوم طوال اليوم.</p>
-                <button>أضف للسلة</button>
-            </div>
+<div class="hero">
+    <h2>مرحبا بكم في ZN_ANSARI-SHOP</h2>
+    <p>أفضل المنتجات بأعلى جودة وبأسعار منافسة</p>
+</div>
+
+<section class="section" id="perfumes">
+    <h2>العطور</h2>
+    <div class="product-grid">
+        <!-- عطور متعددة -->
+        <div class="product">
+            <img src="https://via.placeholder.com/300x300?text=عطر+فاخر" alt="عطر فاخر">
+            <h3>عطر فاخر</h3>
+            <p>رائحة جذابة تدوم طويلًا.</p>
+            <button>أضف للسلة</button>
         </div>
-    </section>
-
-    <!-- قسم الملابس -->
-    <section class="section" id="clothes">
-        <h2>الملابس</h2>
-        <div class="product-grid">
-            <div class="product">
-                <img src="https://via.placeholder.com/300x300?text=قميص+رجالي" alt="قميص رجالي">
-                <h3>قميص رجالي</h3>
-                <p>مريح وأنيق للمناسبات اليومية.</p>
-                <button>أضف للسلة</button>
-            </div>
-            <div class="product">
-                <img src="https://via.placeholder.com/300x300?text=جاكيت+نسائي" alt="جاكيت نسائي">
-                <h3>جاكيت نسائي</h3>
-                <p>مثالي للأجواء الباردة، أنيق ومريح.</p>
-                <button>أضف للسلة</button>
-            </div>
-            <div class="product">
-                <img src="https://via.placeholder.com/300x300?text=بنطلون+رجالي" alt="بنطلون رجالي">
-                <h3>بنطلون رجالي</h3>
-                <p>بنطلون مريح وعصري.</p>
-                <button>أضف للسلة</button>
-            </div>
-            <div class="product">
-                <img src="https://via.placeholder.com/300x300?text=تي-شيرت+نسائي" alt="تي-شيرت نسائي">
-                <h3>تي-شيرت نسائي</h3>
-                <p>أنيق، ناعم، ومثالي لفصل الصيف.</p>
-                <button>أضف للسلة</button>
-            </div>
+        <div class="product">
+            <img src="https://via.placeholder.com/300x300?text=عطر+زهري" alt="عطر زهري">
+            <h3>عطر زهري مميز</h3>
+            <p>رائحة زهرية تدوم طويلًا.</p>
+            <button>أضف للسلة</button>
         </div>
-    </section>
+        <!-- إضافة المزيد من العطور هنا -->
+        <!-- ضع صور واسماء المنتجات هنا لتكملة 30 منتجًا -->
+    </div>
+</section>
 
-    <!-- قسم المنتجات المتنوعة -->
-    <section class="section" id="others">
-        <h2>منتجات متنوعة</h2>
-        <div class="product-grid">
-            <div class="product">
-                <img src="https://via.placeholder.com/300x300?text=منتج+متنوع+1" alt="منتج متنوع 1">
-                <h3>منتج متنوع 1</h3>
-                <p>منتج مبتكر عالي الجودة.</p>
-                <button>أضف للسلة</button>
-            </div>
-            <div class="product">
-                <img src="https://via.placeholder.com/300x300?text=منتج+متنوع+2" alt="منتج متنوع 2">
-                <h3>منتج متنوع 2</h3>
-                <p>منتج مميز يمكن استخدامه في العديد من المجالات.</p>
-                <button>أضف للسلة</button>
-            </div>
+<section class="section" id="clothes">
+    <h2>الملابس</h2>
+    <div class="product-grid">
+        <!-- ملابس متنوعة -->
+        <div class="product">
+            <img src="https://via.placeholder.com/300x300?text=قميص+رجالي" alt="قميص رجالي">
+            <h3>قميص رجالي</h3>
+            <p>مريح وأنيق للمناسبات اليومية.</p>
+            <button>أضف للسلة</button>
         </div>
-    </section>
+        <div class="product">
+            <img src="https://via.placeholder.com/300x300?text=جاكيت+نسائي" alt="جاكيت نسائي">
+            <h3>جاكيت نسائي</h3>
+            <p>مثالي للأجواء الباردة، أنيق ومريح.</p>
+            <button>أضف للسلة</button>
+        </div>
+        <!-- إضافة المزيد من الملابس هنا -->
+        <!-- ضع صور واسماء المنتجات هنا لتكملة 30 منتجًا -->
+    </div>
+</section>
 
-    <!-- قسم البيزنس -->
-    <section class="business-section" id="business">
-        <h2>فرص البيزنس والتعاون</h2>
-        <p>نحن في "ZN_ANSARI-SHOP" نقدم فرصًا رائعة للتعاون التجاري. سواء كان لديك منتجات تريد عرضها أو ترغب في التعاون في مشاريع تجارية مشتركة، نحن هنا لدعمك. اتصل بنا الآن لمزيد من التفاصيل!</p>
-    </section>
+<section class="section" id="others">
+    <h2>منتجات متنوعة</h2>
+    <div class="product-grid">
+        <!-- منتجات متنوعة -->
+        <div class="product">
+            <img src="https://via.placeholder.com/300x300?text=منتج+متنوع" alt="منتج متنوع">
+            <h3>منتج متنوع 1</h3>
+            <p>منتج مميز يمكن استخدامه في العديد من المجالات.</p>
+            <button>أضف للسلة</button>
+        </div>
+        <div class="product">
+            <img src="https://via.placeholder.com/300x300?text=منتج+متنوع+2" alt="منتج متنوع 2">
+            <h3>منتج متنوع 2</h3>
+            <p>منتج مبتكر عالي الجودة.</p>
+            <button>أضف للسلة</button>
+        </div>
+        <!-- إضافة المزيد من المنتجات المتنوعة هنا -->
+        <!-- ضع صور واسماء المنتجات هنا لتكملة 30 منتجًا -->
+    </div>
+</section>
 
-    <!-- قسم التواصل -->
-    <section class="section" id="contact">
-        <h2>تواصل معنا</h2>
-        <form action="mailto:ansarizakariya619@gmail.com" method="post" enctype="text/plain">
-            <input type="text" name="name" placeholder="اسمك" required>
-            <input type="email" name="email" placeholder="بريدك الإلكتروني" required>
-            <textarea name="message" placeholder="رسالتك" rows="5" required></textarea>
-            <input type="submit" value="إرسال">
-        </form>
-    </section>
+<section class="business-section" id="business">
+    <h2>بيزنس وأفكار مساعدة</h2>
+    <p>نحن نقدم حلولًا مميزة للأشخاص الذين يبحثون عن أفكار بيزنس جديدة، ونساعد في حل مشاكل المشاريع الإلكترونية من خلال استشارات وتقنيات مبتكرة.</p>
+    <a href="mailto:ansarizakariya619@gmail.com" class="cta-button">اتصل بنا الآن</a>
+</section>
 
-    <footer>
-        <p>جميع الحقوق محفوظة &copy; 2025 - ZN_ANSARI-SHOP</p>
-    </footer>
+<section class="section" id="contact">
+    <h2>تواصل معنا</h2>
+    <form action="mailto:ansarizakariya619@gmail.com" method="post" enctype="text/plain">
+        <input type="text" name="name" placeholder="اسمك" required>
+        <input type="email" name="email" placeholder="بريدك الإلكتروني" required>
+        <textarea name="message" placeholder="رسالتك" rows="5" required></textarea>
+        <input type="submit" value="إرسال">
+    </form>
+</section>
+
+<footer>
+    <p>جميع الحقوق محفوظة &copy; 2025 - ZN_ANSARI-SHOP</p>
+</footer>
 
 </body>
 </html>
