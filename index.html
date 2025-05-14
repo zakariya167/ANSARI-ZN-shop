@@ -11,46 +11,46 @@
             font-family: 'Cairo', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f2f2f2;
+            background-color: #f4f6f6;
             color: #333;
             direction: rtl;
         }
-        /* الرأس */
         header {
-            background-color: #4CAF50;  /* لون أخضر */
+            background-color: #2980b9;
             color: white;
             text-align: center;
-            padding: 30px 0;
+            padding: 20px;
         }
         header h1 {
-            font-size: 2.5rem;
+            font-size: 3rem;
+            margin: 0;
         }
         nav ul {
             display: flex;
             justify-content: center;
             list-style: none;
             padding: 0;
-            gap: 20px;
+            gap: 25px;
+            font-size: 1.2rem;
         }
         nav a {
             color: white;
             text-decoration: none;
             font-weight: bold;
-            font-size: 1.2rem;
         }
         nav a:hover {
             text-decoration: underline;
         }
 
-        /* تصميم الأقسام */
+        /* أقسام المتجر */
         .section {
             padding: 40px 20px;
         }
         .section h2 {
             text-align: center;
             margin-bottom: 20px;
-            font-size: 2rem;
-            color: #4CAF50;  /* نفس اللون الأخضر */
+            font-size: 2.5rem;
+            color: #2980b9;
         }
 
         /* عرض المنتجات */
@@ -67,6 +67,7 @@
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
             text-align: center;
             transition: transform 0.3s ease;
+            max-width: 300px;
         }
         .product:hover {
             transform: translateY(-10px);
@@ -78,29 +79,32 @@
             margin-bottom: 15px;
         }
         .product h3 {
-            font-size: 1.5rem;
+            font-size: 1.8rem;
             margin: 10px 0;
         }
+        .product p {
+            font-size: 1.2rem;
+            color: #7f8c8d;
+        }
         .product button {
-            background-color: #4CAF50;
+            background-color: #3498db;
             color: white;
             border: none;
-            padding: 10px 20px;
+            padding: 12px 20px;
             border-radius: 5px;
             cursor: pointer;
             font-size: 1rem;
         }
         .product button:hover {
-            background-color: #45a049;
+            background-color: #2980b9;
         }
 
         /* الفوتر */
         footer {
-            background-color: #20232a;
+            background-color: #2980b9;
             color: white;
             text-align: center;
             padding: 20px;
-            margin-top: 50px;
         }
         footer p {
             font-size: 1rem;
@@ -121,13 +125,29 @@
             font-size: 1rem;
         }
         input[type="submit"] {
-            background-color: #4CAF50;
+            background-color: #2980b9;
             color: white;
             border: none;
             cursor: pointer;
         }
         input[type="submit"]:hover {
-            background-color: #45a049;
+            background-color: #3498db;
+        }
+
+        /* تصميم قسم بيزنس */
+        .business-section {
+            background-color: #ecf0f1;
+            padding: 40px 20px;
+            text-align: center;
+        }
+        .business-section h2 {
+            color: #2980b9;
+            font-size: 2.5rem;
+        }
+        .business-section p {
+            font-size: 1.2rem;
+            color: #7f8c8d;
+            margin-top: 20px;
         }
 
     </style>
@@ -231,18 +251,12 @@
                 <p>منتج مميز يمكن استخدامه في العديد من المجالات.</p>
                 <button>أضف للسلة</button>
             </div>
-            <div class="product">
-                <img src="https://via.placeholder.com/300x300?text=منتج+متنوع+3" alt="منتج متنوع 3">
-                <h3>منتج متنوع 3</h3>
-                <p>منتج عالي الجودة ومتعدد الاستخدامات.</p>
-                <button>أضف للسلة</button>
-            </div>
         </div>
     </section>
 
     <!-- قسم البيزنس -->
-    <section class="section" id="business">
-        <h2>فرص البيزنس</h2>
+    <section class="business-section" id="business">
+        <h2>فرص البيزنس والتعاون</h2>
         <p>نحن في "ZN_ANSARI-SHOP" نقدم فرصًا رائعة للتعاون التجاري. سواء كان لديك منتجات تريد عرضها أو ترغب في التعاون في مشاريع تجارية مشتركة، نحن هنا لدعمك. اتصل بنا الآن لمزيد من التفاصيل!</p>
     </section>
 
