@@ -6,124 +6,134 @@
     <title>ZN_ANSARI-SHOP</title>
     <link href="https://fonts.googleapis.com/css2?family=Cairo&display=swap" rel="stylesheet">
     <style>
+        /* إعدادات عامة */
         body {
             font-family: 'Cairo', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
+            background-color: #f2f2f2;
             color: #333;
             direction: rtl;
         }
-
+        /* الرأس */
         header {
-            background-color: #20232a;
+            background-color: #4CAF50;  /* لون أخضر */
             color: white;
-            padding: 20px;
             text-align: center;
+            padding: 30px 0;
         }
-
+        header h1 {
+            font-size: 2.5rem;
+        }
         nav ul {
             display: flex;
             justify-content: center;
             list-style: none;
             padding: 0;
-            margin: 0;
             gap: 20px;
         }
-
         nav a {
             color: white;
             text-decoration: none;
             font-weight: bold;
+            font-size: 1.2rem;
         }
-
         nav a:hover {
             text-decoration: underline;
         }
 
+        /* تصميم الأقسام */
         .section {
             padding: 40px 20px;
         }
-
         .section h2 {
             text-align: center;
             margin-bottom: 20px;
-            color: #333;
+            font-size: 2rem;
+            color: #4CAF50;  /* نفس اللون الأخضر */
         }
 
+        /* عرض المنتجات */
         .product-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 30px;
             justify-items: center;
         }
-
         .product {
-            background: white;
+            background: #fff;
             padding: 20px;
             border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
             text-align: center;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease-in-out;
+            transition: transform 0.3s ease;
         }
-
         .product:hover {
-            transform: scale(1.05);
+            transform: translateY(-10px);
         }
-
         .product img {
-            max-width: 100%;
+            width: 100%;
             height: auto;
             border-radius: 8px;
             margin-bottom: 15px;
         }
-
+        .product h3 {
+            font-size: 1.5rem;
+            margin: 10px 0;
+        }
         .product button {
-            margin-top: 10px;
-            background-color: #20232a;
+            background-color: #4CAF50;
             color: white;
             border: none;
-            padding: 10px;
+            padding: 10px 20px;
             border-radius: 5px;
             cursor: pointer;
-            font-size: 16px;
+            font-size: 1rem;
         }
-
         .product button:hover {
-            background-color: #444950;
+            background-color: #45a049;
         }
 
+        /* الفوتر */
         footer {
             background-color: #20232a;
             color: white;
             text-align: center;
             padding: 20px;
-            margin-top: 30px;
+            margin-top: 50px;
+        }
+        footer p {
+            font-size: 1rem;
         }
 
+        /* نماذج التواصل */
         form {
             max-width: 600px;
             margin: auto;
             display: flex;
             flex-direction: column;
-            gap: 15px;
+            gap: 20px;
         }
-
         input, textarea {
-            padding: 10px;
+            padding: 12px;
             border: 1px solid #ccc;
-            border-radius: 5px;
-            font-family: 'Cairo', sans-serif;
+            border-radius: 8px;
+            font-size: 1rem;
         }
-
         input[type="submit"] {
-            background-color: #20232a;
+            background-color: #4CAF50;
             color: white;
             border: none;
+            cursor: pointer;
         }
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
     </style>
 </head>
 <body>
+
     <header>
         <h1>ZN_ANSARI-SHOP</h1>
         <nav>
@@ -137,6 +147,7 @@
         </nav>
     </header>
 
+    <!-- قسم العطور -->
     <section class="section" id="perfumes">
         <h2>العطور</h2>
         <div class="product-grid">
@@ -148,7 +159,7 @@
             </div>
             <div class="product">
                 <img src="https://via.placeholder.com/300x300?text=عطر+زهري" alt="عطر زهري">
-                <h3>عطر زهري</h3>
+                <h3>عطر زهري مميز</h3>
                 <p>رائحة زهرية تدوم طويلًا.</p>
                 <button>أضف للسلة</button>
             </div>
@@ -164,10 +175,16 @@
                 <p>رائحة طبيعية وفاخرة.</p>
                 <button>أضف للسلة</button>
             </div>
-            <!-- Add more perfumes here -->
+            <div class="product">
+                <img src="https://via.placeholder.com/300x300?text=عطر+ساحر" alt="عطر ساحر">
+                <h3>عطر ساحر</h3>
+                <p>رائحة ساحرة تدوم طوال اليوم.</p>
+                <button>أضف للسلة</button>
+            </div>
         </div>
     </section>
 
+    <!-- قسم الملابس -->
     <section class="section" id="clothes">
         <h2>الملابس</h2>
         <div class="product-grid">
@@ -180,13 +197,13 @@
             <div class="product">
                 <img src="https://via.placeholder.com/300x300?text=جاكيت+نسائي" alt="جاكيت نسائي">
                 <h3>جاكيت نسائي</h3>
-                <p>مثالي للأجواء الباردة.</p>
+                <p>مثالي للأجواء الباردة، أنيق ومريح.</p>
                 <button>أضف للسلة</button>
             </div>
             <div class="product">
                 <img src="https://via.placeholder.com/300x300?text=بنطلون+رجالي" alt="بنطلون رجالي">
                 <h3>بنطلون رجالي</h3>
-                <p>بنطلون عصري ومريح.</p>
+                <p>بنطلون مريح وعصري.</p>
                 <button>أضف للسلة</button>
             </div>
             <div class="product">
@@ -195,35 +212,41 @@
                 <p>أنيق، ناعم، ومثالي لفصل الصيف.</p>
                 <button>أضف للسلة</button>
             </div>
-            <!-- Add more clothes here -->
         </div>
     </section>
 
+    <!-- قسم المنتجات المتنوعة -->
     <section class="section" id="others">
         <h2>منتجات متنوعة</h2>
         <div class="product-grid">
             <div class="product">
                 <img src="https://via.placeholder.com/300x300?text=منتج+متنوع+1" alt="منتج متنوع 1">
                 <h3>منتج متنوع 1</h3>
-                <p>منتج مميز يمكن استخدامه في العديد من المجالات.</p>
+                <p>منتج مبتكر عالي الجودة.</p>
                 <button>أضف للسلة</button>
             </div>
             <div class="product">
                 <img src="https://via.placeholder.com/300x300?text=منتج+متنوع+2" alt="منتج متنوع 2">
                 <h3>منتج متنوع 2</h3>
-                <p>منتج مبتكر عالي الجودة.</p>
+                <p>منتج مميز يمكن استخدامه في العديد من المجالات.</p>
                 <button>أضف للسلة</button>
             </div>
-            <!-- Add more diverse products here -->
+            <div class="product">
+                <img src="https://via.placeholder.com/300x300?text=منتج+متنوع+3" alt="منتج متنوع 3">
+                <h3>منتج متنوع 3</h3>
+                <p>منتج عالي الجودة ومتعدد الاستخدامات.</p>
+                <button>أضف للسلة</button>
+            </div>
         </div>
     </section>
 
+    <!-- قسم البيزنس -->
     <section class="section" id="business">
         <h2>فرص البيزنس</h2>
-        <p>نحن في "ZN_ANSARI-SHOP" نقدم فرصًا رائعة للتعاون التجاري، سواء كان ذلك في بيع منتجاتنا أو التعاون في مشاريع مشتركة. إذا كنت مهتمًا بشراكة مع متجرنا، نحن هنا لدعمك.</p>
-        <p>اتصل بنا الآن لنناقش الفرص المتاحة.</p>
+        <p>نحن في "ZN_ANSARI-SHOP" نقدم فرصًا رائعة للتعاون التجاري. سواء كان لديك منتجات تريد عرضها أو ترغب في التعاون في مشاريع تجارية مشتركة، نحن هنا لدعمك. اتصل بنا الآن لمزيد من التفاصيل!</p>
     </section>
 
+    <!-- قسم التواصل -->
     <section class="section" id="contact">
         <h2>تواصل معنا</h2>
         <form action="mailto:ansarizakariya619@gmail.com" method="post" enctype="text/plain">
@@ -237,5 +260,6 @@
     <footer>
         <p>جميع الحقوق محفوظة &copy; 2025 - ZN_ANSARI-SHOP</p>
     </footer>
+
 </body>
 </html>
