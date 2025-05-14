@@ -15,10 +15,16 @@
             direction: rtl;
         }
         header {
-            background-color: #20232a;
+            background: linear-gradient(135deg, #20232a, #444950);
             color: white;
-            padding: 20px;
+            padding: 20px 0;
             text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            font-weight: 700;
         }
         nav ul {
             display: flex;
@@ -26,76 +32,126 @@
             list-style: none;
             padding: 0;
             margin: 0;
-            gap: 20px;
+            gap: 30px;
         }
         nav a {
             color: white;
             text-decoration: none;
-            font-weight: bold;
+            font-weight: 600;
+            font-size: 1.1rem;
         }
         nav a:hover {
             text-decoration: underline;
+            color: #ff6347;
         }
         .section {
-            padding: 40px 20px;
+            padding: 50px 20px;
         }
         .section h2 {
             text-align: center;
-            margin-bottom: 20px;
+            font-size: 2rem;
+            color: #333;
+            margin-bottom: 30px;
+            font-weight: bold;
         }
         .product-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
         }
         .product {
             background: white;
-            padding: 15px;
-            border-radius: 10px;
+            border-radius: 12px;
+            padding: 20px;
             text-align: center;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .product:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.15);
         }
         .product img {
             max-width: 100%;
             height: auto;
             border-radius: 8px;
         }
+        .product h3 {
+            margin: 15px 0;
+            font-size: 1.5rem;
+            color: #444;
+        }
         .product button {
             margin-top: 10px;
-            background-color: #20232a;
+            background-color: #ff6347;
             color: white;
             border: none;
-            padding: 10px;
+            padding: 12px 20px;
             border-radius: 5px;
+            font-size: 1.1rem;
             cursor: pointer;
+            transition: background-color 0.3s ease;
         }
         .product button:hover {
-            background-color: #444950;
+            background-color: #e53e2f;
         }
         footer {
             background-color: #20232a;
             color: white;
             text-align: center;
-            padding: 20px;
-            margin-top: 30px;
+            padding: 25px 0;
+            margin-top: 40px;
+            font-size: 1rem;
+        }
+        footer p {
+            margin: 0;
         }
         form {
-            max-width: 500px;
+            max-width: 600px;
             margin: auto;
             display: flex;
             flex-direction: column;
             gap: 15px;
         }
         input, textarea {
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            font-family: 'Cairo', sans-serif;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 1rem;
         }
         input[type="submit"] {
-            background-color: #20232a;
+            background-color: #ff6347;
             color: white;
             border: none;
+            font-size: 1.1rem;
+        }
+        input[type="submit"]:hover {
+            background-color: #e53e2f;
+        }
+        .business-section {
+            background: #f7f7f7;
+            padding: 50px 20px;
+        }
+        .business-section h2 {
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 20px;
+            color: #444;
+        }
+        .business-btn {
+            display: block;
+            background-color: #ff6347;
+            color: white;
+            padding: 15px 25px;
+            border-radius: 5px;
+            font-size: 1.2rem;
+            text-align: center;
+            margin: 0 auto;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+        .business-btn:hover {
+            background-color: #e53e2f;
         }
     </style>
 </head>
@@ -122,7 +178,36 @@
                 <p>رائحة جذابة تدوم طويلًا.</p>
                 <button>أضف للسلة</button>
             </div>
-            <!-- يمكنك تكرار المنتجات هنا -->
+            <div class="product">
+                <img src="https://via.placeholder.com/300x300?text=عطر+زهري+مميز" alt="عطر زهري مميز">
+                <h3>عطر زهري مميز</h3>
+                <p>رائحة زهرية تدوم طويلًا.</p>
+                <button>أضف للسلة</button>
+            </div>
+            <div class="product">
+                <img src="https://via.placeholder.com/300x300?text=عطر+شرقي" alt="عطر شرقي">
+                <h3>عطر شرقي</h3>
+                <p>مزيج من العطور الشرقية المميزة.</p>
+                <button>أضف للسلة</button>
+            </div>
+            <div class="product">
+                <img src="https://via.placeholder.com/300x300?text=عطر+خشبي" alt="عطر خشبي">
+                <h3>عطر خشبي</h3>
+                <p>رائحة طبيعية وفاخرة.</p>
+                <button>أضف للسلة</button>
+            </div>
+            <div class="product">
+                <img src="https://via.placeholder.com/300x300?text=عطر+فاخر+للنساء" alt="عطر فاخر للنساء">
+                <h3>عطر فاخر للنساء</h3>
+                <p>رائحة ساحرة وجذابة.</p>
+                <button>أضف للسلة</button>
+            </div>
+            <div class="product">
+                <img src="https://via.placeholder.com/300x300?text=عطر+مميز" alt="عطر مميز">
+                <h3>عطر مميز</h3>
+                <p>أحدث عطورنا الفاخرة.</p>
+                <button>أضف للسلة</button>
+            </div>
         </div>
     </section>
 
@@ -135,6 +220,24 @@
                 <p>مريح وأنيق للمناسبات اليومية.</p>
                 <button>أضف للسلة</button>
             </div>
+            <div class="product">
+                <img src="https://via.placeholder.com/300x300?text=جاكيت+نسائي" alt="جاكيت نسائي">
+                <h3>جاكيت نسائي</h3>
+                <p>مثالي للأجواء الباردة، أنيق ومريح.</p>
+                <button>أضف للسلة</button>
+            </div>
+            <div class="product">
+                <img src="https://via.placeholder.com/300x300?text=بنطلون+رجالي" alt="بنطلون رجالي">
+                <h3>بنطلون رجالي</h3>
+                <p>بنطلون مريح وعصري.</p>
+                <button>أضف للسلة</button>
+            </div>
+            <div class="product">
+                <img src="https://via.placeholder.com/300x300?text=تي-شيرت+نسائي" alt="تي-شيرت نسائي">
+                <h3>تي-شيرت نسائي</h3>
+                <p>أنيق، ناعم، ومثالي لفصل الصيف.</p>
+                <button>أضف للسلة</button>
+            </div>
         </div>
     </section>
 
@@ -143,32 +246,37 @@
         <div class="product-grid">
             <div class="product">
                 <img src="https://via.placeholder.com/300x300?text=منتج+متنوع" alt="منتج متنوع">
-                <h3>منتج متنوع</h3>
-                <p>منتج عالي الجودة.</p>
+                <h3>منتج متنوع 1</h3>
+                <p>منتج مميز يمكن استخدامه في العديد من المجالات.</p>
+                <button>أضف للسلة</button>
+            </div>
+            <div class="product">
+                <img src="https://via.placeholder.com/300x300?text=منتج+متنوع+2" alt="منتج متنوع 2">
+                <h3>منتج متنوع 2</h3>
+                <p>منتج مبتكر عالي الجودة.</p>
                 <button>أضف للسلة</button>
             </div>
         </div>
     </section>
 
-    <section class="section" id="business">
-        <h2>قسم البيزنس</h2>
-        <p style="text-align: center; max-width: 700px; margin: auto;">
-            هل ترغب في التعاون التجاري أو عرض منتجك في متجر الأنصاري؟ نحن نرحب بالشراكات الجديدة. راسلنا لمزيد من التفاصيل.
-        </p>
+    <section class="business-section" id="business">
+        <h2>فرص البيزنس والتعاون</h2>
+        <p>نحن في "عطور الأنصاري" نقدم فرصًا رائعة للتعاون التجاري، سواء كان ذلك في بيع منتجاتنا أو التعاون في مشاريع مشتركة. إذا كنت مهتمًا بشراكة مع متجرنا، نحن هنا لدعمك.</p>
+        <a href="mailto:ansarizakariya619@gmail.com" class="business-btn">اتصل بنا الآن</a>
     </section>
 
     <section class="section" id="contact">
         <h2>تواصل معنا</h2>
-        <form action="mailto:ansarizakariya619@gmail.com" method="post" enctype="text/plain">
-            <input type="text" name="name" placeholder="اسمك" required>
-            <input type="email" name="email" placeholder="بريدك الإلكتروني" required>
+        <form>
+            <input type="text" name="name" placeholder="الاسم" required>
+            <input type="email" name="email" placeholder="البريد الإلكتروني" required>
             <textarea name="message" placeholder="رسالتك" rows="5" required></textarea>
             <input type="submit" value="إرسال">
         </form>
     </section>
 
     <footer>
-        <p>جميع الحقوق محفوظة &copy; 2025 - عطور الأنصاري</p>
+        <p>&copy; 2025 جميع الحقوق محفوظة | متجر عطور الأنصاري</p>
     </footer>
 </body>
 </html>
