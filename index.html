@@ -5,96 +5,122 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ZN_ANSARI-SHOP</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Cairo', sans-serif;
+    }
+  </style>
 </head>
-<body class="bg-gray-100 font-sans">
-  <!-- هيدر المتجر -->
-  <header class="bg-blue-700 text-white p-4 text-center text-2xl font-bold">ZN_ANSARI-SHOP</header>
-
-  <!-- زر سلة الشراء -->
-  <button id="cartButton" class="fixed top-4 right-4 bg-blue-600 text-white p-2 rounded-full z-50">🛒 <span id="cartCount">0</span></button>
-
-  <!-- نافذة السلة -->
-  <div id="cartModal" class="hidden fixed top-0 right-0 w-full md:w-1/3 h-full bg-white shadow-lg z-40 p-4 overflow-y-auto">
-    <h2 class="text-xl font-bold mb-4">🛒 سلة الشراء</h2>
-    <ul id="cartItems" class="space-y-2"></ul>
-    <p class="mt-4 font-semibold">الإجمالي: <span id="cartTotal">0</span> ريال</p>
-    <button class="mt-4 bg-red-600 text-white px-4 py-2 rounded" onclick="closeCart()">إغلاق</button>
-  </div>
-
-  <!-- المنتجات -->
-  <section class="p-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-    <div class="bg-white p-4 rounded shadow">
-      <img src="https://via.placeholder.com/300x200" alt="منتج" class="mb-2 rounded">
-      <h3 class="font-bold">عطر فرنسي فاخر</h3>
-      <p>55 ريال</p>
-      <button onclick="addToCart('عطر فرنسي فاخر', 55)" class="mt-2 bg-green-600 text-white px-3 py-1 rounded">أضف للسلة</button>
+<body class="bg-gray-100">
+  <!-- Header -->
+  <header class="bg-gradient-to-r from-purple-600 to-indigo-600 text-white p-6 shadow-md">
+    <div class="container mx-auto flex justify-between items-center">
+      <h1 class="text-3xl font-bold">🛍️ ZN_ANSARI-SHOP</h1>
+      <div>
+        <button onclick="toggleCart()" class="relative">
+          🛒 <span id="cart-count" class="absolute -top-2 -right-2 bg-red-500 text-xs px-1 rounded-full">0</span>
+        </button>
+      </div>
     </div>
-    <!-- كرر للمنتجات الأخرى -->
-    <div class="bg-white p-4 rounded shadow">
-      <img src="https://via.placeholder.com/300x200" alt="منتج" class="mb-2 rounded">
-      <h3 class="font-bold">عطر شرقي فاخر</h3>
-      <p>60 ريال</p>
-      <button onclick="addToCart('عطر شرقي فاخر', 60)" class="mt-2 bg-green-600 text-white px-3 py-1 rounded">أضف للسلة</button>
+  </header>
+
+  <!-- Main Sections -->
+  <main class="container mx-auto p-4">
+    <!-- Sections -->
+    <section id="products" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <!-- Example Product -->
+    </section>
+
+    <!-- Cart Sidebar -->
+    <div id="cart" class="fixed top-0 right-0 w-80 h-full bg-white shadow-lg transform translate-x-full transition-transform duration-300 z-50 overflow-y-auto">
+      <div class="p-4 border-b flex justify-between items-center">
+        <h2 class="text-xl font-bold">سلة التسوق</h2>
+        <button onclick="toggleCart()">❌</button>
+      </div>
+      <div id="cart-items" class="p-4"></div>
+      <div class="p-4 border-t">
+        <p class="font-bold">الإجمالي: <span id="cart-total">0</span> ريال</p>
+        <button class="mt-2 w-full bg-green-600 hover:bg-green-700 text-white py-2 rounded">إتمام الشراء</button>
+      </div>
     </div>
-    <!-- أضف 8 منتجات أخرى بالطريقة نفسها -->
-  </section>
+  </main>
 
-  <!-- قسم بيزنس -->
-  <section class="bg-white p-6 m-6 rounded shadow">
-    <h2 class="text-2xl font-bold mb-2">💼 قسم البيزنس</h2>
-    <p>بيع أفكار مشاريع، مساعدات تقنية، حلول إلكترونية...</p>
-  </section>
-
-  <!-- قسم تواصل معنا -->
-  <section class="bg-white p-6 m-6 rounded shadow">
-    <h2 class="text-2xl font-bold mb-2">📩 تواصل معنا</h2>
-    <p>راسلنا عبر الإيميل: <a href="mailto:ansarizakariya619@gmail.com" class="text-blue-600">ansarizakariya619@gmail.com</a></p>
-  </section>
-
-  <!-- كود JavaScript لإدارة السلة -->
   <script>
-    let cart = [];
+    const products = [
+      { id: 1, name: "عطر مسك", price: 35, image: "https://images.unsplash.com/photo-1600180758890-6e4b4fa02d0f" },
+      { id: 2, name: "عطر زهري", price: 45, image: "https://images.unsplash.com/photo-1600180759433-18ec1e85a7f5" },
+      { id: 3, name: "تيشيرت قطني", price: 55, image: "https://images.unsplash.com/photo-1618354691373-d851c25c5013" },
+      { id: 4, name: "بنطال جينز", price: 80, image: "https://images.unsplash.com/photo-1602810311575-251e7057d682" },
+      { id: 5, name: "منتج إلكتروني", price: 120, image: "https://images.unsplash.com/photo-1541534401786-1272a9dcecc3" },
+      { id: 6, name: "فكرة بيزنس مربحة", price: 300, image: "https://images.unsplash.com/photo-1605902711622-cfb43c4437d5" }
+    ];
 
-    function addToCart(name, price) {
-      cart.push({ name, price });
+    const cart = [];
+
+    function renderProducts() {
+      const container = document.getElementById('products');
+      products.forEach(p => {
+        container.innerHTML += `
+          <div class="bg-white rounded shadow p-4">
+            <img src="${p.image}" alt="${p.name}" class="w-full h-48 object-cover rounded mb-2">
+            <h3 class="text-lg font-bold">${p.name}</h3>
+            <p class="text-gray-600">${p.price} ريال</p>
+            <button onclick="addToCart(${p.id})" class="mt-2 w-full bg-indigo-600 hover:bg-indigo-700 text-white py-2 rounded">أضف إلى السلة</button>
+          </div>`;
+      });
+    }
+
+    function toggleCart() {
+      const cartEl = document.getElementById('cart');
+      cartEl.classList.toggle('translate-x-full');
+    }
+
+    function addToCart(id) {
+      const product = products.find(p => p.id === id);
+      const found = cart.find(item => item.id === id);
+      if (found) {
+        found.qty++;
+      } else {
+        cart.push({ ...product, qty: 1 });
+      }
       updateCart();
-      alert("تمت إضافة المنتج إلى السلة!");
+    }
+
+    function removeFromCart(id) {
+      const index = cart.findIndex(item => item.id === id);
+      if (index > -1) {
+        cart.splice(index, 1);
+        updateCart();
+      }
     }
 
     function updateCart() {
-      const cartItems = document.getElementById("cartItems");
-      const cartCount = document.getElementById("cartCount");
-      const cartTotal = document.getElementById("cartTotal");
+      const cartItemsEl = document.getElementById('cart-items');
+      const cartCountEl = document.getElementById('cart-count');
+      const cartTotalEl = document.getElementById('cart-total');
 
-      cartItems.innerHTML = "";
-      let total = 0;
+      cartItemsEl.innerHTML = '';
+      let total = 0, count = 0;
 
-      cart.forEach((item, index) => {
-        total += item.price;
-        cartItems.innerHTML += `
-          <li class="border p-2 flex justify-between">
-            ${item.name} - ${item.price} ريال
-            <button onclick="removeFromCart(${index})" class="text-red-500">✖</button>
-          </li>
-        `;
+      cart.forEach(item => {
+        total += item.price * item.qty;
+        count += item.qty;
+        cartItemsEl.innerHTML += `
+          <div class="flex justify-between items-center mb-2">
+            <div>
+              <p class="font-bold">${item.name}</p>
+              <p class="text-sm text-gray-600">${item.qty} × ${item.price} ريال</p>
+            </div>
+            <button onclick="removeFromCart(${item.id})" class="text-red-600">🗑️</button>
+          </div>`;
       });
 
-      cartCount.innerText = cart.length;
-      cartTotal.innerText = total.toFixed(2);
+      cartCountEl.textContent = count;
+      cartTotalEl.textContent = total;
     }
 
-    function removeFromCart(index) {
-      cart.splice(index, 1);
-      updateCart();
-    }
-
-    function closeCart() {
-      document.getElementById("cartModal").classList.add("hidden");
-    }
-
-    document.getElementById("cartButton").addEventListener("click", () => {
-      document.getElementById("cartModal").classList.toggle("hidden");
-    });
+    renderProducts();
   </script>
 </body>
 </html>
