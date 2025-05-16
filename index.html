@@ -1,113 +1,136 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="ar">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ZN_ANSARI-SHOP</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Cairo&display=swap" rel="stylesheet" />
   <style>
     body {
       font-family: 'Cairo', sans-serif;
     }
   </style>
 </head>
-<body class="bg-gray-100">
-
-  <!-- الهيدر -->
-  <header class="bg-gradient-to-r from-blue-800 to-purple-700 text-white p-6 text-center text-4xl font-bold shadow-md">
+<body class="bg-gray-50 text-gray-900">
+  <!-- Header -->
+  <header class="bg-indigo-600 text-white p-4 text-center text-2xl font-bold">
     ZN_ANSARI-SHOP
   </header>
 
-  <!-- زر السلة -->
-  <button id="cartButton" class="fixed top-4 left-4 bg-blue-700 text-white p-3 rounded-full z-50 shadow-lg">
-    🛒 <span id="cartCount">0</span>
-  </button>
+  <!-- Navigation -->
+  <nav class="bg-white shadow p-4 flex justify-center gap-4 text-lg font-medium">
+    <a href="#perfumes" class="text-indigo-600">العطور</a>
+    <a href="#clothes" class="text-indigo-600">الملابس</a>
+    <a href="#products" class="text-indigo-600">منتجات متنوعة</a>
+    <a href="#business" class="text-indigo-600">بيزنس وأفكار</a>
+    <a href="#contact" class="text-indigo-600">تواصل معنا</a>
+  </nav>
 
-  <!-- نافذة السلة -->
-  <div id="cartModal" class="hidden fixed top-0 left-0 w-full md:w-1/3 h-full bg-white shadow-lg z-40 p-6 overflow-y-auto">
-    <h2 class="text-2xl font-bold mb-4">🛒 سلة الشراء</h2>
-    <ul id="cartItems" class="space-y-2"></ul>
-    <p class="mt-4 font-semibold">الإجمالي: <span id="cartTotal">0</span> ريال</p>
-    <button class="mt-4 bg-red-600 text-white px-4 py-2 rounded" onclick="closeCart()">إغلاق</button>
-  </div>
+  <!-- Products Sections -->
+  <main class="p-4 space-y-12">
+    <!-- Perfumes -->
+    <section id="perfumes">
+      <h2 class="text-2xl font-bold mb-4">🧴 العطور</h2>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <!-- Perfume products -->
+        <script>
+          const perfumeProducts = [
+            { name: "عطر فرنسي فاخر", price: 90, img: "https://i.imgur.com/KtLeiVK.jpeg" },
+            { name: "عطر شرقي مركز", price: 70, img: "https://i.imgur.com/IgXjzls.jpeg" },
+            { name: "مسك وردي ناعم", price: 50, img: "https://i.imgur.com/9WRRDUr.jpeg" },
+            { name: "عطر رجالي فخم", price: 85, img: "https://i.imgur.com/F6v0c6R.jpeg" },
+          ];
+        </script>
+      </div>
+    </section>
 
-  <!-- المنتجات -->
-  <section class="p-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-    <div class="bg-white p-4 rounded-xl shadow-md hover:shadow-xl transition">
-      <img src="https://images.unsplash.com/photo-1585238342028-96629bbaa24a" alt="عطر فرنسي فاخر" class="mb-3 rounded-xl w-full h-48 object-cover" />
-      <h3 class="font-bold text-xl">عطر فرنسي فاخر</h3>
-      <p class="text-gray-700">55 ريال</p>
-      <button onclick="addToCart('عطر فرنسي فاخر', 55)" class="mt-3 bg-green-600 text-white px-4 py-2 rounded w-full">أضف للسلة</button>
-    </div>
-    <!-- يمكن نسخ البلوك أعلاه وتغييره لإنشاء المزيد من المنتجات -->
-  </section>
+    <!-- Clothes -->
+    <section id="clothes">
+      <h2 class="text-2xl font-bold mb-4">👕 الملابس</h2>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <script>
+          const clothesProducts = [
+            { name: "تيشرت قطن رجالي", price: 40, img: "https://i.imgur.com/E8rXAhN.jpeg" },
+            { name: "عباية نسائية فاخرة", price: 120, img: "https://i.imgur.com/OGLBPJr.jpeg" },
+            { name: "سروال رياضي", price: 35, img: "https://i.imgur.com/lEPwdyM.jpeg" },
+            { name: "جاكيت شتوي", price: 150, img: "https://i.imgur.com/Ch0c52c.jpeg" },
+          ];
+        </script>
+      </div>
+    </section>
 
-  <!-- قسم بيزنس -->
-  <section class="p-6 bg-white mt-10 rounded shadow-md max-w-4xl mx-auto">
-    <h2 class="text-3xl font-bold text-center text-blue-700 mb-6">💼 قسم بيزنس وأفكار مساعدة</h2>
-    <ul class="space-y-4 text-lg text-gray-800">
-      <li>📦 مساعدتك في بيع منتجاتك عبر الإنترنت</li>
-      <li>🔧 حلول لمشاكل إلكترونية وبرمجية</li>
-      <li>💡 أفكار مشاريع صغيرة مربحة</li>
-      <li>📲 تصميم بوتات تليجرام وخدمات رقمية</li>
-    </ul>
-  </section>
+    <!-- Other Products -->
+    <section id="products">
+      <h2 class="text-2xl font-bold mb-4">🧃 منتجات متنوعة</h2>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <script>
+          const miscProducts = [
+            { name: "ساعة ذكية", price: 200, img: "https://i.imgur.com/jfDoqzJ.jpeg" },
+            { name: "سماعة بلوتوث", price: 75, img: "https://i.imgur.com/RiL2jko.jpeg" },
+            { name: "شنطة جلد", price: 90, img: "https://i.imgur.com/0KzvFLz.jpeg" },
+            { name: "مصحف فاخر", price: 60, img: "https://i.imgur.com/hxK1i8O.jpeg" },
+          ];
+        </script>
+      </div>
+    </section>
 
-  <!-- قسم تواصل معنا -->
-  <section class="p-6 mt-10 bg-gray-50 max-w-4xl mx-auto rounded shadow">
-    <h2 class="text-3xl font-bold text-center text-blue-600 mb-4">📬 تواصل معنا</h2>
-    <form class="space-y-4">
-      <input type="text" placeholder="الاسم" class="w-full p-3 border border-gray-300 rounded" />
-      <input type="email" placeholder="البريد الإلكتروني" class="w-full p-3 border border-gray-300 rounded" />
-      <textarea placeholder="رسالتك" rows="4" class="w-full p-3 border border-gray-300 rounded"></textarea>
-      <button type="submit" class="bg-blue-700 text-white px-6 py-2 rounded">إرسال</button>
-    </form>
-  </section>
+    <!-- Business Section -->
+    <section id="business">
+      <h2 class="text-2xl font-bold mb-4">💼 بيزنس وأفكار مساعدة</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div class="bg-white shadow p-4 rounded-xl">
+          <h3 class="font-bold text-xl">خدمة بيع المنتجات الإلكترونية</h3>
+          <p class="text-gray-700">نساعدك في إنشاء متجرك وبيع منتجاتك الرقمية بكل سهولة واحترافية.</p>
+        </div>
+        <div class="bg-white shadow p-4 rounded-xl">
+          <h3 class="font-bold text-xl">حل المشاكل التقنية</h3>
+          <p class="text-gray-700">نوفر حلولًا فعالة للمشاكل التقنية مثل البوتات، المواقع، الدفع الإلكتروني والمزيد.</p>
+        </div>
+      </div>
+    </section>
 
-  <!-- قسم الدفع -->
-  <section class="p-6 mt-10 bg-white max-w-4xl mx-auto rounded shadow text-center">
-    <h2 class="text-2xl font-bold text-green-600 mb-3">💳 طرق الدفع</h2>
-    <p class="text-lg">ندعم الدفع عبر PayPal، STC Pay، تحويل بنكي، والدفع عند الاستلام</p>
-    <a href="#" class="mt-4 inline-block bg-yellow-500 text-white px-6 py-2 rounded">PayPal ادفع الآن</a>
-  </section>
+    <!-- Contact -->
+    <section id="contact">
+      <h2 class="text-2xl font-bold mb-4">📬 تواصل معنا</h2>
+      <form class="bg-white shadow p-4 rounded-xl max-w-md">
+        <input type="text" placeholder="اسمك" class="w-full mb-2 p-2 border rounded" required>
+        <input type="email" placeholder="بريدك الإلكتروني" class="w-full mb-2 p-2 border rounded" required>
+        <textarea placeholder="رسالتك" class="w-full mb-2 p-2 border rounded" rows="4" required></textarea>
+        <button class="bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700">إرسال</button>
+      </form>
+    </section>
+  </main>
 
-  <!-- الفوتر -->
-  <footer class="bg-gray-800 text-white text-center p-4 mt-10">
-    جميع الحقوق محفوظة &copy; 2025 ZN_ANSARI-SHOP
+  <!-- Footer -->
+  <footer class="bg-gray-200 text-center p-4 mt-12 text-sm">
+    جميع الحقوق محفوظة &copy; ZN_ANSARI-SHOP 2025
   </footer>
 
+  <!-- Shopping Cart Logic (بسيط) -->
   <script>
-    const cart = [];
+    const allProducts = [...perfumeProducts, ...clothesProducts, ...miscProducts];
+    const sections = document.querySelectorAll('main section');
 
-    function addToCart(product, price) {
-      cart.push({ product, price });
-      document.getElementById('cartCount').textContent = cart.length;
-      updateCart();
-    }
-
-    function updateCart() {
-      const cartItems = document.getElementById('cartItems');
-      const cartTotal = document.getElementById('cartTotal');
-      cartItems.innerHTML = '';
-      let total = 0;
-      cart.forEach((item, index) => {
-        total += item.price;
-        const li = document.createElement('li');
-        li.textContent = `${item.product} - ${item.price} ريال`;
-        cartItems.appendChild(li);
+    function renderProducts(products, container) {
+      container.innerHTML = '';
+      products.forEach(product => {
+        const card = document.createElement('div');
+        card.className = "bg-white shadow rounded-xl overflow-hidden";
+        card.innerHTML = `
+          <img src="${product.img}" class="w-full h-40 object-cover">
+          <div class="p-2">
+            <h3 class="font-bold">${product.name}</h3>
+            <p class="text-gray-600">${product.price} ريال</p>
+            <button class="mt-2 bg-green-500 text-white w-full py-1 rounded">أضف إلى السلة</button>
+          </div>
+        `;
+        container.appendChild(card);
       });
-      cartTotal.textContent = total;
     }
 
-    document.getElementById('cartButton').addEventListener('click', () => {
-      document.getElementById('cartModal').classList.toggle('hidden');
-    });
-
-    function closeCart() {
-      document.getElementById('cartModal').classList.add('hidden');
-    }
+    renderProducts(perfumeProducts, document.querySelector("#perfumes div"));
+    renderProducts(clothesProducts, document.querySelector("#clothes div"));
+    renderProducts(miscProducts, document.querySelector("#products div"));
   </script>
-
 </body>
 </html>
