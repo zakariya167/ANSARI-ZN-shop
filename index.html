@@ -15,12 +15,12 @@
 <body class="bg-gray-100">
 
   <!-- الهيدر -->
-  <header class="bg-blue-700 text-white p-4 text-center text-3xl font-bold">
+  <header class="bg-gradient-to-r from-blue-800 to-purple-700 text-white p-6 text-center text-4xl font-bold shadow-md">
     ZN_ANSARI-SHOP
   </header>
 
   <!-- زر السلة -->
-  <button id="cartButton" class="fixed top-4 left-4 bg-blue-600 text-white p-3 rounded-full z-50 shadow-lg">
+  <button id="cartButton" class="fixed top-4 left-4 bg-blue-700 text-white p-3 rounded-full z-50 shadow-lg">
     🛒 <span id="cartCount">0</span>
   </button>
 
@@ -34,154 +34,80 @@
 
   <!-- المنتجات -->
   <section class="p-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-    <!-- مثال 10 منتجات -->
-    <div class="bg-white p-4 rounded shadow">
-      <img src="https://images.unsplash.com/photo-1585238342028-96629bbaa24a" alt="عطر فرنسي فاخر" class="mb-2 rounded" />
-      <h3 class="font-bold text-lg">عطر فرنسي فاخر</h3>
-      <p>55 ريال</p>
-      <button onclick="addToCart('عطر فرنسي فاخر', 55)" class="mt-2 bg-green-600 text-white px-3 py-1 rounded w-full">أضف للسلة</button>
+    <div class="bg-white p-4 rounded-xl shadow-md hover:shadow-xl transition">
+      <img src="https://images.unsplash.com/photo-1585238342028-96629bbaa24a" alt="عطر فرنسي فاخر" class="mb-3 rounded-xl w-full h-48 object-cover" />
+      <h3 class="font-bold text-xl">عطر فرنسي فاخر</h3>
+      <p class="text-gray-700">55 ريال</p>
+      <button onclick="addToCart('عطر فرنسي فاخر', 55)" class="mt-3 bg-green-600 text-white px-4 py-2 rounded w-full">أضف للسلة</button>
     </div>
-
-    <div class="bg-white p-4 rounded shadow">
-      <img src="https://images.unsplash.com/photo-1595433562696-19b1f9d6c6d7" alt="عطر شرقي فاخر" class="mb-2 rounded" />
-      <h3 class="font-bold text-lg">عطر شرقي فاخر</h3>
-      <p>60 ريال</p>
-      <button onclick="addToCart('عطر شرقي فاخر', 60)" class="mt-2 bg-green-600 text-white px-3 py-1 rounded w-full">أضف للسلة</button>
-    </div>
-
-    <div class="bg-white p-4 rounded shadow">
-      <img src="https://images.unsplash.com/photo-1600181959111-dc6ae6e8f6c8" alt="عطر زهري ناعم" class="mb-2 rounded" />
-      <h3 class="font-bold text-lg">عطر زهري ناعم</h3>
-      <p>48 ريال</p>
-      <button onclick="addToCart('عطر زهري ناعم', 48)" class="mt-2 bg-green-600 text-white px-3 py-1 rounded w-full">أضف للسلة</button>
-    </div>
-
-    <div class="bg-white p-4 rounded shadow">
-      <img src="https://images.unsplash.com/photo-1596920563876-3de0cc5a9760" alt="عطر رجالي كلاسيك" class="mb-2 rounded" />
-      <h3 class="font-bold text-lg">عطر رجالي كلاسيك</h3>
-      <p>70 ريال</p>
-      <button onclick="addToCart('عطر رجالي كلاسيك', 70)" class="mt-2 bg-green-600 text-white px-3 py-1 rounded w-full">أضف للسلة</button>
-    </div>
-
-    <div class="bg-white p-4 rounded shadow">
-      <img src="https://images.unsplash.com/photo-1602524205956-6e7551198ad1" alt="عطر نسائي فخم" class="mb-2 rounded" />
-      <h3 class="font-bold text-lg">عطر نسائي فخم</h3>
-      <p>65 ريال</p>
-      <button onclick="addToCart('عطر نسائي فخم', 65)" class="mt-2 bg-green-600 text-white px-3 py-1 rounded w-full">أضف للسلة</button>
-    </div>
-
-    <div class="bg-white p-4 rounded shadow">
-      <img src="https://images.unsplash.com/photo-1635089932274-3c9f8ff417a9" alt="عطر صيفي منعش" class="mb-2 rounded" />
-      <h3 class="font-bold text-lg">عطر صيفي منعش</h3>
-      <p>52 ريال</p>
-      <button onclick="addToCart('عطر صيفي منعش', 52)" class="mt-2 bg-green-600 text-white px-3 py-1 rounded w-full">أضف للسلة</button>
-    </div>
-
-    <div class="bg-white p-4 rounded shadow">
-      <img src="https://images.unsplash.com/photo-1592824462304-00c5743b21b6" alt="عطر المسك الأبيض" class="mb-2 rounded" />
-      <h3 class="font-bold text-lg">عطر المسك الأبيض</h3>
-      <p>58 ريال</p>
-      <button onclick="addToCart('عطر المسك الأبيض', 58)" class="mt-2 bg-green-600 text-white px-3 py-1 rounded w-full">أضف للسلة</button>
-    </div>
-
-    <div class="bg-white p-4 rounded shadow">
-      <img src="https://images.unsplash.com/photo-1616529733824-84d7d814b245" alt="عطر فواكه استوائية" class="mb-2 rounded" />
-      <h3 class="font-bold text-lg">عطر فواكه استوائية</h3>
-      <p>50 ريال</p>
-      <button onclick="addToCart('عطر فواكه استوائية', 50)" class="mt-2 bg-green-600 text-white px-3 py-1 rounded w-full">أضف للسلة</button>
-    </div>
-
-    <div class="bg-white p-4 rounded shadow">
-      <img src="https://images.unsplash.com/photo-1616493661257-b6796f46b3e7" alt="عطر بخور شرقي" class="mb-2 rounded" />
-      <h3 class="font-bold text-lg">عطر بخور شرقي</h3>
-      <p>62 ريال</p>
-      <button onclick="addToCart('عطر بخور شرقي', 62)" class="mt-2 bg-green-600 text-white px-3 py-1 rounded w-full">أضف للسلة</button>
-    </div>
+    <!-- يمكن نسخ البلوك أعلاه وتغييره لإنشاء المزيد من المنتجات -->
   </section>
 
-  <!-- قسم البيزنس -->
-  <section class="bg-white p-6 m-6 rounded shadow max-w-4xl mx-auto">
-    <h2 class="text-3xl font-bold mb-4">💼 قسم البيزنس</h2>
-    <p class="mb-4">
-      في هذا القسم نقدم خدمات وأفكار لمساعدتك على إطلاق مشروعك أو تطوير عملك:
-    </p>
-    <ul class="list-disc list-inside space-y-2 text-lg">
-      <li>بيع أفكار مشاريع مبتكرة وجاهزة للتنفيذ.</li>
-      <li>مساعدات تقنية في مجالات تطوير المواقع والتطبيقات.</li>
-      <li>حلول إلكترونية لتسهيل الأعمال وتحسين الإنتاجية.</li>
-      <li>دورات تدريبية وورش عمل في ريادة الأعمال والتسويق.</li>
+  <!-- قسم بيزنس -->
+  <section class="p-6 bg-white mt-10 rounded shadow-md max-w-4xl mx-auto">
+    <h2 class="text-3xl font-bold text-center text-blue-700 mb-6">💼 قسم بيزنس وأفكار مساعدة</h2>
+    <ul class="space-y-4 text-lg text-gray-800">
+      <li>📦 مساعدتك في بيع منتجاتك عبر الإنترنت</li>
+      <li>🔧 حلول لمشاكل إلكترونية وبرمجية</li>
+      <li>💡 أفكار مشاريع صغيرة مربحة</li>
+      <li>📲 تصميم بوتات تليجرام وخدمات رقمية</li>
     </ul>
-    <p class="mt-6">
-      لمزيد من التفاصيل أو لطلب خدمة خاصة، تواصل معنا عبر قسم التواصل في الأسفل.
-    </p>
   </section>
 
   <!-- قسم تواصل معنا -->
-  <section class="bg-white p-6 m-6 rounded shadow max-w-4xl mx-auto">
-    <h2 class="text-3xl font-bold mb-4">📩 تواصل معنا</h2>
-    <p class="mb-2">
-      يمكنك مراسلتنا عبر البريد الإلكتروني:
-      <a href="mailto:ansarizakariya619@gmail.com" class="text-blue-600 underline">
-        ansarizakariya619@gmail.com
-      </a>
-    </p>
-    <p>أو عبر الهاتف: <strong>+966 5XXXXXXXX</strong></p>
+  <section class="p-6 mt-10 bg-gray-50 max-w-4xl mx-auto rounded shadow">
+    <h2 class="text-3xl font-bold text-center text-blue-600 mb-4">📬 تواصل معنا</h2>
+    <form class="space-y-4">
+      <input type="text" placeholder="الاسم" class="w-full p-3 border border-gray-300 rounded" />
+      <input type="email" placeholder="البريد الإلكتروني" class="w-full p-3 border border-gray-300 rounded" />
+      <textarea placeholder="رسالتك" rows="4" class="w-full p-3 border border-gray-300 rounded"></textarea>
+      <button type="submit" class="bg-blue-700 text-white px-6 py-2 rounded">إرسال</button>
+    </form>
   </section>
 
-  <!-- طرق الدفع (زر بايبال كمثال) -->
-  <section class="bg-white p-6 m-6 rounded shadow max-w-4xl mx-auto text-center">
-    <h2 class="text-2xl font-bold mb-4">طرق الدفع</h2>
-    <button
-      onclick="alert('يتم توجيهك إلى PayPal للدفع')"
-      class="bg-yellow-400 text-black px-6 py-3 rounded shadow hover:bg-yellow-500 transition"
-    >
-      الدفع عبر PayPal
-    </button>
+  <!-- قسم الدفع -->
+  <section class="p-6 mt-10 bg-white max-w-4xl mx-auto rounded shadow text-center">
+    <h2 class="text-2xl font-bold text-green-600 mb-3">💳 طرق الدفع</h2>
+    <p class="text-lg">ندعم الدفع عبر PayPal، STC Pay، تحويل بنكي، والدفع عند الاستلام</p>
+    <a href="#" class="mt-4 inline-block bg-yellow-500 text-white px-6 py-2 rounded">PayPal ادفع الآن</a>
   </section>
+
+  <!-- الفوتر -->
+  <footer class="bg-gray-800 text-white text-center p-4 mt-10">
+    جميع الحقوق محفوظة &copy; 2025 ZN_ANSARI-SHOP
+  </footer>
 
   <script>
-    let cart = [];
+    const cart = [];
 
-    function addToCart(name, price) {
-      cart.push({ name, price });
+    function addToCart(product, price) {
+      cart.push({ product, price });
+      document.getElementById('cartCount').textContent = cart.length;
       updateCart();
-      alert("تمت إضافة المنتج إلى السلة!");
     }
 
     function updateCart() {
-      const cartItems = document.getElementById("cartItems");
-      const cartCount = document.getElementById("cartCount");
-      const cartTotal = document.getElementById("cartTotal");
-
-      cartItems.innerHTML = "";
+      const cartItems = document.getElementById('cartItems');
+      const cartTotal = document.getElementById('cartTotal');
+      cartItems.innerHTML = '';
       let total = 0;
-
       cart.forEach((item, index) => {
         total += item.price;
-        cartItems.innerHTML += `
-          <li class="border p-2 flex justify-between items-center">
-            ${item.name} - ${item.price} ريال
-            <button onclick="removeFromCart(${index})" class="text-red-600 hover:text-red-800 font-bold text-xl">✖</button>
-          </li>
-        `;
+        const li = document.createElement('li');
+        li.textContent = `${item.product} - ${item.price} ريال`;
+        cartItems.appendChild(li);
       });
-
-      cartCount.innerText = cart.length;
-      cartTotal.innerText = total.toFixed(2);
+      cartTotal.textContent = total;
     }
 
-    function removeFromCart(index) {
-      cart.splice(index, 1);
-      updateCart();
-    }
+    document.getElementById('cartButton').addEventListener('click', () => {
+      document.getElementById('cartModal').classList.toggle('hidden');
+    });
 
     function closeCart() {
-      document.getElementById("cartModal").classList.add("hidden");
+      document.getElementById('cartModal').classList.add('hidden');
     }
-
-    document.getElementById("cartButton").addEventListener("click", () => {
-      document.getElementById("cartModal").classList.toggle("hidden");
-    });
   </script>
+
 </body>
 </html>
